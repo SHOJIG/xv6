@@ -134,11 +134,12 @@ printfinit(void)
   pr.locking = 1;
 }
 
-void backtrace() {
+void
+backtrace() {
   uint64 fp = r_fp();
-  int pagetop = PGROUNDUP(fp);
+  uint64 pagetop = PGROUNDUP(fp);
   printf("backtrace:\n");
-  while(fp <= pagetop) {
+  while(fp < pagetop) {
     uint64 ra = *(uint64*)(fp - 8);
     printf("%p\n", ra);
     fp = *(uint64*)(fp - 16);
