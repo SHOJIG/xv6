@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "sleeplock.h": "c",
+        "fcntl.h": "c",
+        "spinlock.h": "c"
+    }
+}
